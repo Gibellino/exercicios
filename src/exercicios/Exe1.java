@@ -14,16 +14,19 @@ public class Exe1 {
 		int[] temp = new int[n.length+1];
 		
 		
-		
 		for(int i=0; i< n.length; i++){
 			temp[i] = n[i];
 		}
 		
-		n = temp;
+		temp[n.length] = n1;
 		
-		n[n.length-1] = n1;
+		return temp;
 		
-		return n;
+		/*for(int i=0; i< n.length; temp[i] = n[i++]);
+		
+		temp[n.length] = n1;
+		
+		return temp;*/
 	}
 	
 	public void listar(int[] n){
@@ -36,22 +39,21 @@ public class Exe1 {
 	
 	public int[] delNum(int p, int[] n){
 		
+		int[] temp = new int[n.length-1];
+		
 		for(int i=p; i<n.length;i++){
 			if(i < (n.length-1)){
 				n[i]=n[i+1];
 			}
 		}
 		
-		int[] temp = new int[n.length-1];
+		
 		
 		for(int i=0; i< temp.length; i++){
 			temp[i] = n[i];
 		}
 		
-		n = temp;
-		
 		return n;
-		
 	}
 	
 }
