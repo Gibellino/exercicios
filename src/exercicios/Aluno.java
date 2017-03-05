@@ -1,15 +1,17 @@
 package exercicios;
 
+import java.util.Comparator;
+
 public class Aluno {
 
+	public String nome;
 	public int nota;
 	public String contacto;
-	public String nome;
 	
-	public Aluno(int nota, String contacto, String nome) {
+	public Aluno(String nome, int nota, String contacto) {
+		this.nome = nome;
 		this.nota = nota;
 		this.contacto = contacto;
-		this.nome = nome;
 	}
 
 	public int getNota() {
@@ -36,6 +38,13 @@ public class Aluno {
 		this.nome = nome;
 	}
 	
-	
-	
+	public static class Comparators{
+		
+		public static Comparator<Aluno> NOTA = new Comparator<Aluno>() {
+            
+            public int compare(Aluno a1, Aluno a2) {
+                return a1.nota - a2.nota;
+            }
+		};
+	}
 }

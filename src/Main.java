@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 import exercicios.Aluno;
 import exercicios.Exe1;
@@ -15,8 +14,8 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		//ex1();
-		ex2();
-		//ex3();
+		//ex2();
+		ex3();
 		
 	}
 	
@@ -76,24 +75,23 @@ public class Main {
 
 		ArrayList<Aluno> al = new ArrayList<Aluno>();
 		
-		int nota=0;
-		String nome, contacto;
+		al.add(new Aluno("Manel",15,"987654321"));
+		al.add(new Aluno("Joaquim",18,"123456789"));
+		al.add(new Aluno("Alfredo",10,"456987321"));
+		al.add(new Aluno("Geremias",5,"321998765"));
+		al.add(new Aluno("Felismina",20,"132645879"));
+		
+		Collections.sort(al, Aluno.Comparators.NOTA);
 		
 		for(int i=0; i<5; i++){
 			
-			System.out.print("\n Insira o nome do aluno " + (i+1) + ": ");
-			nome = read.nextLine();
+			System.out.println("Aluno " + (i+1) + ":"
+					+ "\n Nome: " + al.get(i).getNome()
+					+ "\n Nota: " + al.get(i).getNota()
+					+ "\n Contacto: " + al.get(i).getContacto());
 			
-			System.out.print(" Insira a nota do aluno " + (i+1) + ": ");
-			nota = read.nextInt();
-			
-			System.out.print(" Insira o contacto do aluno " + (i+1) + ": ");
-			contacto = read.nextLine();
-			
-			Aluno a = new Aluno(nota,contacto,nome);
-			
-			al.add(a);
 		}
+		
 	}
 	
 }
